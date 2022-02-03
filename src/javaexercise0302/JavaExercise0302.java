@@ -24,6 +24,7 @@ public class JavaExercise0302 {
         }
         
         System.out.println("The average temperature for this week is: " + calcAvg(temperatures));
+        System.out.println("The maximum temperature for this week is: " + calcMax(temperatures));
     }
     
     //Calculates average
@@ -38,5 +39,15 @@ public class JavaExercise0302 {
         
         //Calculates and returns the average
         return average/temps.length;
+    }
+    
+    //Calculates the maximum temperature of the array of temps
+    public static int calcMax(int[] temps) {
+        int maxTemp = 0;
+        for(int m = 0; m < temps.length; m++) {
+            if(temps[m] > maxTemp)
+                maxTemp = temps[m];
+        }
+        return maxTemp;
     }
 }
