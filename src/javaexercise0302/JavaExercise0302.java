@@ -14,7 +14,10 @@ public class JavaExercise0302 {
 
     public static void main(String[] args) {
         
+        //Initialized temperature array for the week
         int[] temperatures = new int[14];
+        
+        //Creates random temperatures for the week 2 * 7 days
         for(int t = 0; t < 14; t++) {
             temperatures[t] = (int)(Math.random()*101-50);
             System.out.println(temperatures[t]);
@@ -23,13 +26,17 @@ public class JavaExercise0302 {
         System.out.println("The average temperature for this week is: " + calcAvg(temperatures));
     }
     
+    //Calculates average
     public static double calcAvg(int[] temps) {
         double average = 0.0;
         for(int a = 0; a < temps.length; a++) {
+            
+            //Excludes Temperatures from outside of range
             if(temps[a] > -50 && temps[a] < 50)
                 average += temps[a];
         }
         
+        //Calculates and returns the average
         return average/temps.length;
     }
 }
